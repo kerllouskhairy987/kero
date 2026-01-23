@@ -52,6 +52,8 @@ export default function Header() {
 
     const navLinks = [
         { name: t.header.nav.about, href: "#about" },
+        { name: t.header.nav.skills, href: "#skills" },
+        { name: t.header.nav.certificates, href: "#certificates" },
         { name: t.header.nav.projects, href: "#projects" },
         { name: t.header.nav.contact, href: "#contact" },
     ];
@@ -78,7 +80,7 @@ export default function Header() {
                     </div>
 
                     {/* Center: Navigation Links */}
-                    <nav className="hidden md:flex items-center space-x-4 rounded-full px-3 py-px backdrop-brightness-125 shadow-blue-950 shadow-md">
+                    <nav className="hidden lg:flex items-center space-x-4 rounded-full px-3 py-px backdrop-brightness-125 shadow-blue-950 shadow-md">
                         {navLinks.map((link) => (
                             <Link
                                 key={link.name}
@@ -91,7 +93,7 @@ export default function Header() {
                     </nav>
 
                     {/* Right: Social Icons, Language & Theme Toggle */}
-                    <div className="hidden md:flex items-center space-x-4">
+                    <div className="hidden lg:flex items-center space-x-4">
                         <div className="flex items-center space-x-3">
                             <a
                                 href="https://www.linkedin.com/in/kerolos-khairy-a6673625a"
@@ -142,7 +144,7 @@ export default function Header() {
                     </div>
 
                     {/* Mobile Menu Button */}
-                    <div className="flex md:hidden">
+                    <div className="flex lg:hidden">
                         <button
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
                             className="text-white hover:opacity-80 focus:outline-none"
@@ -156,7 +158,7 @@ export default function Header() {
 
             {/* Mobile Navigation Drawer */}
             {isMenuOpen && (
-                <div className="md:hidden bg-black/90 backdrop-blur-md border-t border-white/10 absolute w-full left-0 top-16 shadow-lg">
+                <div className="lg:hidden bg-black/90 backdrop-blur-md border-t border-white/10 absolute w-full left-0 top-16 shadow-lg">
                     <div className="px-4 py-4 space-y-4">
                         {navLinks.map((link) => (
                             <Link

@@ -6,17 +6,9 @@ import { useLanguage } from "@/context/LanguageContext";
 
 export default function About() {
     const { t } = useLanguage();
-    const [open, setOpen] = useState(false);
-    const [imageUrl, setImageUrl] = useState("");
-    const [lang, setLang] = useState("en");
-
-    useEffect(() => {
-        const lang = localStorage.getItem("language") as string;
-        setLang(lang)
-    }, []);
 
     return (
-        <section id="about" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pb-20 bg-white dark:bg-zinc-950 transition-colors duration-300 overflow-hidden">
+        <section id="about" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20 bg-white dark:bg-zinc-950 transition-colors duration-300 overflow-hidden">
             <div className="mx-auto max-w-7xl w-full">
                 {/* Section Title */}
                 <div className="text-center mb-16">
@@ -79,10 +71,6 @@ export default function About() {
                                             <h4 className="text-lg md:text-xl font-semibold text-zinc-900 dark:text-white">
                                                 {t.about.education.items[1].title} <span className="g-text">{t.about.education.items[1].role}</span>
                                             </h4>
-                                            <Eye className="cursor-pointer text-green-600 p-1 w-8 h-8" onClick={() => {
-                                                setImageUrl("/devWave2.png")
-                                                setOpen(true)
-                                            }} />
                                         </div>
                                         <p className="text-sm text-zinc-600 dark:text-zinc-400">
                                             {t.about.education.items[1].company}
@@ -101,10 +89,6 @@ export default function About() {
                                             <h4 className="text-lg md:text-xl font-semibold text-zinc-900 dark:text-white">
                                                 {t.about.education.items[2].title}
                                             </h4>
-                                            <Eye className="cursor-pointer text-green-600 p-1 w-8 h-8" onClick={() => {
-                                                setImageUrl("/depi.jpeg")
-                                                setOpen(true)
-                                            }} />
                                         </div>
                                         <p className="text-sm text-zinc-600 dark:text-zinc-400">
                                             {t.about.education.items[2].company}
@@ -115,14 +99,6 @@ export default function About() {
                             </div>
                         </div>
                     </div>
-
-                    {/* Certificate Modal */}
-                    {open && (
-                        <div className="absolute z-10 top-0 left-1/2 -translate-x-1/2 w-[400px] h-[400px] bg-black/80 flex items-center justify-center">
-                            <span onClick={() => setOpen(false)} className="absolute -top-0 right-0 cursor-pointer text-red-500 bg-white w-14 h-14 rounded-full flex justify-center items-center text-7xl">&times;</span>
-                            <img src={imageUrl} className="max-w-[90%] max-h-[90%]" />
-                        </div>
-                    )}
                 </div>
 
             </div>
