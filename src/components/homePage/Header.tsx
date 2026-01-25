@@ -173,10 +173,14 @@ export default function Header() {
 
                         {/* Mobile Actions */}
                         <div className="pt-4 border-t border-white/10 flex items-center justify-between">
+
                             <div className="flex space-x-4">
                                 <a href="https://www.linkedin.com/in/kerolos-khairy-a6673625a" target="_blank" rel="noreferrer" className="social-icon-bg" aria-label="LinkedIn"><Linkedin size={20} color="white" /></a>
                                 <a href="https://github.com/kerllouskhairy987" target="_blank" rel="noreferrer" className="social-icon-bg" aria-label="GitHub"><Github size={20} color="white" /></a>
                                 <a href="mailto:kyrlskhyry80@gmail.com" className="social-icon-bg" aria-label="Email"><Mail size={20} color="white" /></a>
+
+                                {/* Language Dropdown */}
+                                <LanguageDropdown />
                             </div>
                             <button
                                 onClick={toggleTheme}
