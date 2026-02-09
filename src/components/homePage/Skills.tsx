@@ -42,8 +42,11 @@ export default function Skills() {
     ];
 
     const backendSkills: Skill[] = [
+        { name: "Node.js", icon: "https://cdn.simpleicons.org/nodedotjs/339933" },
+        { name: "Express.js", icon: "https://cdn.simpleicons.org/express/000000" },
+        { name: "MongoDB", icon: "https://cdn.simpleicons.org/mongodb/47A248" },
+        { name: "Mongoose", icon: "https://cdn.simpleicons.org/mongoose/880000" },
         { name: "Prisma", icon: "https://cdn.simpleicons.org/prisma/2D3748" },
-        { name: "PostgreSQL", icon: "https://cdn.simpleicons.org/postgresql/4169E1" },
     ];
 
     const toolSkills: Skill[] = [
@@ -66,7 +69,7 @@ export default function Skills() {
         if (typeof skill.icon === "string") {
             // Handle Next.js and GitHub dark/light mode visibility if possible, or just default.
             // Using a filter invert class for dark mode on specific logos (Next.js, GitHub) is a common trick.
-            const isDarkSensitive = skill.name === "Next.js" || skill.name === "GitHub";
+            const isDarkSensitive = skill.name === "Next.js" || skill.name === "GitHub" || skill.name === "Express.js";
             return (
                 <img
                     src={skill.icon}
@@ -100,8 +103,8 @@ export default function Skills() {
                     <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-zinc-50 to-transparent dark:from-black z-10 pointer-events-none"></div>
 
                     <div
-                        className={`flex w-max gap-16 group-hover:[animation-play-state:paused] active:[animation-play-state:paused] ${dir === "ltr"? "animate-scroll-ltr" : "animate-scroll-rtl"}`}
-                        // style={{ animationDirection: dir === 'rtl' ? 'reverse' : 'normal' }}
+                        className={`flex w-max gap-16 group-hover:[animation-play-state:paused] active:[animation-play-state:paused] ${dir === "ltr" ? "animate-scroll-ltr" : "animate-scroll-rtl"}`}
+                    // style={{ animationDirection: dir === 'rtl' ? 'reverse' : 'normal' }}
                     >
                         {[...allSkills, ...allSkills, ...allSkills].map((skill, index) => (
                             <div key={`${skill.name}-${index}`} className="flex-shrink-0 w-20 h-20 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 hover:scale-110 opacity-70 hover:opacity-100">
@@ -149,7 +152,7 @@ function SkillCategoryCard({ title, skills, delay }: { title: string, skills: Sk
                             {(() => {
                                 if (skill.name === "CSS Modules") return <FileJson className="w-8 h-8 text-blue-500" />;
                                 if (typeof skill.icon === "string") {
-                                    const isDarkSensitive = skill.name === "Next.js" || skill.name === "GitHub";
+                                    const isDarkSensitive = skill.name === "Next.js" || skill.name === "GitHub" || skill.name === "Express.js";
                                     return <img src={skill.icon} alt={skill.name} className={`w-8 h-8 object-contain ${isDarkSensitive ? "dark:invert" : ""}`} />
                                 }
                                 const Icon = skill.icon;

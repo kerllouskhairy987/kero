@@ -6,6 +6,7 @@ import Image from "next/image";
 import toast from "react-hot-toast";
 import Antigravity from "@/reactBits/Antigravity";
 import { useLanguage } from "@/context/LanguageContext";
+import { Github, Linkedin, Mail } from "lucide-react";
 
 export default function Hero() {
     const { t } = useLanguage();
@@ -85,6 +86,14 @@ export default function Hero() {
                         <p className="text-base md:text-lg text-zinc-600 dark:text-zinc-400 max-w-xl leading-relaxed">
                             {t.hero.description}
                         </p>
+
+                        <div className="flex justify-center items-center md:hidden">
+                            <div className="flex space-x-4">
+                                <a href="https://www.linkedin.com/in/kerolos-khairy-a6673625a" target="_blank" rel="noreferrer" className="social-icon-bg" aria-label="LinkedIn"><Linkedin size={20} color="white" /></a>
+                                <a href="https://github.com/kerllouskhairy987" target="_blank" rel="noreferrer" className="social-icon-bg" aria-label="GitHub"><Github size={20} color="white" /></a>
+                                <a href="mailto:kyrlskhyry80@gmail.com" className="social-icon-bg" aria-label="Email"><Mail size={20} color="white" /></a>
+                            </div>
+                        </div>
 
                         <div className="flex flex-col sm:flex-row gap-4 pt-4">
                             <button
