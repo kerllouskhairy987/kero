@@ -223,7 +223,7 @@ export const en = {
         sendError: "Failed to send message. Please try again later.",
     },
     footer: {
-        role: "Junior Front End Developer",
+        role: "Frontend Engineer",
         tagline: "Turning complex problems into elegant digital solutions.",
         nav: {
             title: "Quick Links",
