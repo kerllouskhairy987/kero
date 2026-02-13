@@ -2,6 +2,7 @@ export const en = {
     header: {
         nav: {
             about: "About",
+            experience: "Experience",
             projects: "Projects",
             skills: "Skills",
             certificates: "Certificates",
@@ -11,47 +12,75 @@ export const en = {
     hero: {
         greeting: "Hi, I am",
         name: "Kerolos Khairy",
-        title: "Junior Front End Developer",
+        title: "Frontend Engineer",
         description:
-            "Passionate front-end developer specializing in creating beautiful, responsive, and user-friendly web applications. I turn ideas into reality through clean code and modern design principles.",
+            "Frontend Engineer with 1+ year focused on React.js and Next.js, experienced in delivering core UI features in beta and production-grade web applications within Agile teams.",
         downloadCV: "Download CV",
         viewProjects: "View Projects",
         cvDownloadSuccess: "CV downloaded successfully!",
     },
     about: {
         title: "About Me",
-        whoAmI: {
-            title: "Who Am I",
-            paragraphs: [
-                "I am a passionate software engineer specializing in front-end web development using React.js and Next.js. With a strong foundation in engineering principles and modern web technologies, I build scalable, responsive, and user-friendly applications.",
-                "My approach combines technical expertise with a keen eye for design, ensuring that the applications I build are not only functional but also deliver exceptional user experiences.",
-                "Through continuous learning and collaboration, I strive to bring innovative solutions to life, contributing to the growth and success of the applications I work on.",
-                "With a strong commitment to quality and a passion for innovation, I am committed to delivering exceptional results that meet the needs of users and stakeholders.",
-                "Let's work together to create exceptional software solutions that drive business success.",
-            ],
-        },
-        education: {
-            title: "Education",
-            items: [
-                {
-                    title: "Onsite Internship",
-                    role: "As Frontend Developer",
-                    company: "At Zedny from December 2025 to January 2026",
-                    duration: "Duration: 2 Months",
-                },
-                {
-                    title: "Remote Internship",
-                    role: "As Frontend Developer",
-                    company: "At DevWave July from 2025 to October 2025",
-                    duration: "Duration: 3 Months",
-                },
-                {
-                    title: "Graduate of DEPI (Digital Egypt Pioneers Initiative)",
-                    company: "At DEPI from January 2025 to Jane 2025",
-                    duration: "Duration: 2 Months",
-                },
-            ],
-        },
+        // Core Focus, Engineering Approach, Collaboration Style
+        sections: [
+            {
+                title: "Core Focus",
+                description: "Frontend Engineer with 1+ year focused on React.js and Next.js, experienced in delivering core UI features in beta and production-grade web applications.",
+            },
+            {
+                title: "Engineering Approach",
+                description: "Strong in building scalable UI, reusable components, and performance-driven frontend architecture.",
+            },
+            {
+                title: "Collaboration Style",
+                description: "Experienced in working within Agile teams, collaborating closely with designers and backend engineers.",
+            }
+        ]
+    },
+    experience: {
+        title: "Experience",
+        items: [
+            {
+                role: "React.js & Next.js Developer",
+                company: "Zedny INC",
+                date: "Oct 2025 — Present",
+                location: "Cairo",
+                bullets: [
+                    "Spearheaded front-end development for a beta product platform",
+                    "Architected reusable components using React.js and Next.js",
+                    "Built responsive layouts improving performance and maintainability",
+                    "Worked closely with designers and backend engineers in Agile teams"
+                ]
+            },
+            {
+                role: "Frontend Developer",
+                company: "Azzrk",
+                date: "Nov 2024 — Oct 2025",
+                location: "Mansoura",
+                bullets: [
+                    "Engineered responsive landing pages optimized for performance and scalability",
+                    "Built pixel-perfect production-ready interfaces using HTML, CSS, SASS, and JavaScript",
+                    "Improved code reusability and accelerated feature delivery cycles",
+                    "Enhanced cross-browser UI stability and usability",
+                    "Collaborated with designers and stakeholders"
+                ]
+            }
+        ]
+    },
+    education: {
+        title: "Education",
+        items: [
+            {
+                degree: "B.Sc. in Computer Science Engineering",
+                institution: "Faculty of Engineering, Kafrelsheikh University",
+                date: "Oct 2020 — Oct 2026",
+            },
+            {
+                degree: "Graduate, DEPI | MERN Stack Web Development Track",
+                institution: "Digital Egypt Pioneers Initiative",
+                date: "Apr 2024 — Oct 2024",
+            }
+        ]
     },
     skills: {
         title: "Skills",

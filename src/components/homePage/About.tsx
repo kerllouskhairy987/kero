@@ -1,14 +1,19 @@
 "use client";
 
-import { Eye } from "lucide-react";
-import { useEffect, useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
+import { Code2, Cpu, Users } from "lucide-react";
 
 export default function About() {
     const { t } = useLanguage();
 
+    const icons = [
+        <Code2 key="code" size={32} />,
+        <Cpu key="cpu" size={32} />,
+        <Users key="users" size={32} />
+    ];
+
     return (
-        <section id="about" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20 bg-white dark:bg-zinc-950 transition-colors duration-300 overflow-hidden">
+        <section id="about" className="min-h-[50vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20 bg-zinc-50 dark:bg-black transition-colors duration-300 overflow-hidden">
             <div className="mx-auto max-w-7xl w-full">
                 {/* Section Title */}
                 <div className="text-center mb-16">
@@ -20,87 +25,45 @@ export default function About() {
                     }}></div>
                 </div>
 
-                {/* Two Column Layout */}
-                <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 relative">
-                    {/* Left Column - Who Am I (appears second on mobile) */}
-                    <div className="flex-1 order-2 lg:order-1">
-                        <div className="space-y-6">
-                            <h3 data-aos="fade-right" className="text-2xl md:text-3xl font-bold text-zinc-900 dark:text-white mb-6">
-                                {t.about.whoAmI.title}
-                            </h3>
+                {/* Three Column Layout - Highlight Blocks */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    {t.about.sections.map((section, index) => (
+                        <div
+                            key={index}
+                            data-aos="fade-up"
+                            data-aos-delay={index * 100}
+                            className="bg-white/50 dark:bg-zinc-900/50 p-8 rounded-2xl border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all duration-300 hover:shadow-lg group relative overflow-hidden backdrop-blur-sm hover:scale-[1.01]"
+                        >
+                            {/* Liquid Gradient Flow Background */}
+                            <div className="absolute inset-0 opacity-[0.08] dark:opacity-[0.12] bg-[size:300%_300%] animate-[liquidFlow_16s_ease-in-out_infinite] group-hover:[animation-play-state:paused] pointer-events-none transition-all duration-500" style={{
+                                backgroundImage: 'linear-gradient(to bottom right, var(--primaryFirst), var(--primarySecond), transparent)'
+                            }}></div>
 
-                            <div className="space-y-4 text-base md:text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                                {t.about.whoAmI.paragraphs.map((paragraph, index) => (
-                                    <p key={index} data-aos="fade-right">
-                                        {paragraph}
-                                    </p>
-                                ))}
+                            {/* Secondary Blob Layer for Depth */}
+                            <div className="absolute inset-0 opacity-[0.05] bg-[size:200%_200%] animate-[liquidFlow_20s_reverse_infinite] group-hover:[animation-play-state:paused] pointer-events-none" style={{
+                                background: 'radial-gradient(circle at 50% 50%, var(--primarySecond), transparent 70%)'
+                            }}></div>
+
+                            <div className="relative z-10">
+                                <div className="mb-6 inline-block p-3 rounded-lg bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-white group-hover:text-transparent group-hover:bg-clip-text transition-all duration-300" style={{
+                                    backgroundImage: 'linear-gradient(90deg, var(--primaryFirst), var(--primarySecond))'
+                                }}>
+                                    <div className="text-zinc-600 dark:text-zinc-300 group-hover:text-green-500">
+                                        {icons[index]}
+                                    </div>
+                                </div>
+
+                                <h3 className="text-xl font-bold text-zinc-900 dark:text-white mb-4">
+                                    {section.title}
+                                </h3>
+
+                                <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                                    {section.description}
+                                </p>
                             </div>
                         </div>
-                    </div>
-
-                    {/* Right Column - Education (appears first on mobile) */}
-                    <div className="flex-1 order-1 lg:order-2">
-                        <div className="space-y-6">
-                            <h3 data-aos="fade-left" className="text-2xl md:text-3xl font-bold text-zinc-900 dark:text-white mb-6">
-                                {t.about.education.title}
-                            </h3>
-
-                            <div className="space-y-6">
-                                {/* Education Item 1 */}
-                                <div data-aos="fade-left" className="relative ps-8 pb-8 border-s-2 border-zinc-200 dark:border-zinc-800">
-                                    <div className={`absolute -start-2 top-0 w-4 h-4 rounded-full`} style={{
-                                        background: 'linear-gradient(90deg, var(--primaryFirst), var(--primarySecond))'
-                                    }}></div>
-                                    <div className="bg-zinc-50 dark:bg-zinc-900 p-6 rounded-lg border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors flex flex-col gap-1">
-                                        <h4 className="text-lg md:text-xl font-semibold text-zinc-900 dark:text-white">{t.about.education.items[0].title} <span className="g-text">{t.about.education.items[0].role}</span></h4>
-                                        <p className="text-sm text-zinc-600 dark:text-zinc-400">
-                                            {t.about.education.items[0].company}
-                                        </p>
-                                        <span>{t.about.education.items[0].duration}</span>
-                                    </div>
-                                </div>
-
-                                {/* Education Item 2 */}
-                                <div data-aos="fade-left" className="relative ps-8 pb-8 border-s-2 border-zinc-200 dark:border-zinc-800">
-                                    <div className={`absolute -start-2 top-0 w-4 h-4 rounded-full`} style={{
-                                        background: 'linear-gradient(90deg, var(--primaryFirst), var(--primarySecond))'
-                                    }}></div>
-                                    <div className="bg-zinc-50 dark:bg-zinc-900 p-6 rounded-lg border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors">
-                                        <div className="flex justify-between items-center">
-                                            <h4 className="text-lg md:text-xl font-semibold text-zinc-900 dark:text-white">
-                                                {t.about.education.items[1].title} <span className="g-text">{t.about.education.items[1].role}</span>
-                                            </h4>
-                                        </div>
-                                        <p className="text-sm text-zinc-600 dark:text-zinc-400">
-                                            {t.about.education.items[1].company}
-                                        </p>
-                                        <span>{t.about.education.items[1].duration}</span>
-                                    </div>
-                                </div>
-
-                                {/* Education Item 3 */}
-                                <div data-aos="fade-left" className="relative ps-8 pb-8 border-s-2 border-zinc-200 dark:border-zinc-800">
-                                    <div className={`absolute -start-2 top-0 w-4 h-4 rounded-full`} style={{
-                                        background: 'linear-gradient(90deg, var(--primaryFirst), var(--primarySecond))'
-                                    }}></div>
-                                    <div className="bg-zinc-50 dark:bg-zinc-900 p-6 rounded-lg border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors">
-                                        <div className="flex justify-between items-center">
-                                            <h4 className="text-lg md:text-xl font-semibold text-zinc-900 dark:text-white">
-                                                {t.about.education.items[2].title}
-                                            </h4>
-                                        </div>
-                                        <p className="text-sm text-zinc-600 dark:text-zinc-400">
-                                            {t.about.education.items[2].company}
-                                        </p>
-                                        <span>{t.about.education.items[2].duration}</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    ))}
                 </div>
-
             </div>
         </section>
     );

@@ -97,7 +97,6 @@ export default function Skills() {
                 </div>
 
                 {/* Infinite Slider */}
-
                 <div className="relative w-full overflow-hidden mb-20 group select-none">
                     <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-zinc-50 to-transparent dark:from-black z-10 pointer-events-none"></div>
                     <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-zinc-50 to-transparent dark:from-black z-10 pointer-events-none"></div>
@@ -139,6 +138,11 @@ function SkillCategoryCard({ title, skills, delay }: { title: string, skills: Sk
             data-aos-delay={delay}
             className="bg-white dark:bg-zinc-900 rounded-2xl p-6 shadow-sm border border-zinc-100 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors"
         >
+            {/* Liquid Gradient Flow Background */}
+            <div className="absolute inset-0 opacity-[0.08] dark:opacity-[0.12] bg-[size:300%_300%] animate-[liquidFlow_16s_ease-in-out_infinite] group-hover:[animation-play-state:paused] pointer-events-none transition-all duration-500" style={{
+                backgroundImage: 'linear-gradient(to bottom right, var(--primaryFirst), var(--primarySecond), transparent)'
+            }}></div>
+
             <h3 className="text-xl font-bold text-zinc-900 dark:text-white mb-6 border-b border-zinc-100 dark:border-zinc-800 pb-2">
                 {title}
             </h3>

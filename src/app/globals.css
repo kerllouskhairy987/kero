@@ -138,6 +138,49 @@ body {
 
 /* Firefox Support */
 * {
-  scrollbar-width: thin;
   scrollbar-color: var(--primaryFirst) var(--background);
+}
+
+@keyframes auroraFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  25% {
+    background-position: 50% 0%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  75% {
+    background-position: 50% 100%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes liquidFlow {
+  0% {
+    background-position: 0% 40%;
+  }
+
+  25% {
+    background-position: 60% 20%;
+  }
+
+  50% {
+    background-position: 100% 60%;
+  }
+
+  75% {
+    background-position: 40% 100%;
+  }
+
+  100% {
+    background-position: 0% 40%;
+  }
 }

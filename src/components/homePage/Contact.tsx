@@ -117,7 +117,12 @@ export default function Contact() {
                 </div>
 
                 {/* Form Container */}
-                <div className="bg-white dark:bg-zinc-900 rounded-3xl p-8 shadow-xl border border-zinc-100 dark:border-zinc-800 max-w-4xl mx-auto">
+                <div className="relative bg-white dark:bg-zinc-900 rounded-3xl p-8 shadow-xl border border-zinc-100 dark:border-zinc-800 max-w-4xl mx-auto">
+                    {/* Liquid Gradient Flow Background */}
+                    <div className="absolute inset-0 opacity-[0.08] dark:opacity-[0.12] bg-[size:300%_300%] animate-[liquidFlow_16s_ease-in-out_infinite] group-hover:[animation-play-state:paused] pointer-events-none transition-all duration-500" style={{
+                        backgroundImage: 'linear-gradient(to bottom right, var(--primaryFirst), var(--primarySecond), transparent)'
+                    }}></div>
+
                     <form onSubmit={handleSubmit} className="space-y-6">
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             {/* Name Field */}
@@ -132,7 +137,7 @@ export default function Contact() {
                                         name="name"
                                         value={formData.name}
                                         onChange={handleChange}
-                                        className={`w-full px-4 py-3 rounded-lg bg-zinc-50 dark:bg-zinc-800 border-2 transition-all outline-none text-zinc-900 dark:text-white ${errors.name
+                                        className={`w-full px-4 py-3 rounded-lg bg-transparent border border-zinc-300 transition-all outline-none text-zinc-900 dark:text-white ${errors.name
                                             ? "border-red-400 focus:border-red-500"
                                             : "border-transparent focus:border-[#2ecc71]"
                                             }`}
@@ -161,7 +166,7 @@ export default function Contact() {
                                         name="email"
                                         value={formData.email}
                                         onChange={handleChange}
-                                        className={`w-full px-4 py-3 rounded-lg bg-zinc-50 dark:bg-zinc-800 border-2 transition-all outline-none text-zinc-900 dark:text-white ${errors.email
+                                        className={`w-full px-4 py-3 rounded-lg bg-zinc-50 dark:bg-transparent border border-zinc-300 transition-all outline-none text-zinc-900 dark:text-white ${errors.email
                                             ? "border-red-400 focus:border-red-500"
                                             : "border-transparent focus:border-[#2ecc71]"
                                             }`}
@@ -191,7 +196,7 @@ export default function Contact() {
                                     rows={5}
                                     value={formData.message}
                                     onChange={handleChange}
-                                    className={`w-full px-4 py-3 rounded-lg bg-zinc-50 dark:bg-zinc-800 border-2 transition-all outline-none text-zinc-900 dark:text-white resize-none ${errors.message
+                                    className={`w-full px-4 py-3 rounded-lg bg-transparent border-2 border-zinc-300 transition-all outline-none text-zinc-900 dark:text-white resize-none ${errors.message
                                         ? "border-red-400 focus:border-red-500"
                                         : "border-transparent focus:border-[#2ecc71]"
                                         }`}

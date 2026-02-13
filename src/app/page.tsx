@@ -1,6 +1,8 @@
 import Header from "@/components/homePage/Header";
 import Hero from "@/components/homePage/Hero";
 import About from "@/components/homePage/About";
+import Experience from "@/components/homePage/Experience";
+import Education from "@/components/homePage/Education";
 import Skills from "@/components/homePage/Skills";
 import Certificates from "@/components/homePage/Certificates";
 import Projects from "@/components/homePage/Projects";
@@ -12,7 +14,9 @@ export default async function Home() {
     <div className="flex flex-col bg-zinc-50 dark:bg-black transition-colors duration-300">
       <Header />
       <Hero />
+      <Experience />
       <About />
+      <Education />
       <Skills />
       <Certificates />
       <Projects />

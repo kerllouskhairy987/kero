@@ -55,17 +55,37 @@ export default function Hero() {
     };
 
     return (
-        <section className="z-20 min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20 bg-zinc-50 dark:bg-black transition-colors duration-300">
+        <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20 bg-zinc-50 dark:bg-black transition-colors duration-300 overflow-hidden">
+            {/* Antigravity Background Layer */}
+            <div className="absolute inset-0 z-0 pointer-events-none">
+                <Antigravity
+                    count={300}
+                    magnetRadius={15}
+                    ringRadius={10}
+                    waveSpeed={0.5}
+                    waveAmplitude={0.5}
+                    particleSize={1.2}
+                    lerpSpeed={0.03}
+                    color="#29c390" // Primary Green
+                    autoAnimate
+                    particleVariance={0.8}
+                    rotationSpeed={0}
+                    depthFactor={1.5}
+                    pulseSpeed={4}
+                    particleShape="sphere"
+                    fieldStrength={8}
+                />
+            </div>
 
             {/* waves */}
-            <div className="absolute top-0 left-0 right-0 opacity-70">
+            <div className="absolute top-0 left-0 right-0 opacity-70 z-0 pointer-events-none">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
                     <path fill="#00cba9" fillOpacity="1" d="M0,160L21.8,149.3C43.6,139,87,117,131,90.7C174.5,64,218,32,262,48C305.5,64,349,128,393,138.7C436.4,149,480,107,524,96C567.3,85,611,107,655,117.3C698.2,128,742,128,785,149.3C829.1,171,873,213,916,208C960,203,1004,149,1047,133.3C1090.9,117,1135,139,1178,165.3C1221.8,192,1265,224,1309,229.3C1352.7,235,1396,213,1418,202.7L1440,192L1440,0L1418.2,0C1396.4,0,1353,0,1309,0C1265.5,0,1222,0,1178,0C1134.5,0,1091,0,1047,0C1003.6,0,960,0,916,0C872.7,0,829,0,785,0C741.8,0,698,0,655,0C610.9,0,567,0,524,0C480,0,436,0,393,0C349.1,0,305,0,262,0C218.2,0,175,0,131,0C87.3,0,44,0,22,0L0,0Z"></path>
                 </svg>
             </div>
 
 
-            <div className="mx-auto max-w-7xl w-full">
+            <div className="mx-auto max-w-7xl w-full relative z-10">
                 <div className="flex flex-wrap-reverse md:flex-nowrap items-center justify-between gap-12">
                     {/* Left Section - Text Content */}
                     <div data-aos="fade-right" className="flex-1 space-y-6">
@@ -98,13 +118,13 @@ export default function Hero() {
                         <div className="flex flex-col sm:flex-row gap-4 pt-4">
                             <button
                                 onClick={handleDownloadCV}
-                                className="whitespace-nowrap px-8 py-3 bg-linear-to-r from-[var(--primaryFirst)] to-[var(--primarySecond)] text-white font-semibold rounded-lg shadow-lg hover:shadow-xl hover:opacity-90 transition-all"
+                                className="whitespace-nowrap px-8 py-3 bg-linear-to-r from-[var(--primaryFirst)] to-[var(--primarySecond)] text-white font-semibold rounded-lg shadow-lg hover:shadow-xl hover:opacity-90 transition-all cursor-pointer z-20"
                             >
                                 {t.hero.downloadCV}
                             </button>
                             <Link
                                 href="#projects"
-                                className="whitespace-nowrap px-8 py-3 bg-white dark:bg-zinc-900 text-zinc-800 dark:text-white font-semibold rounded-lg border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-all text-center"
+                                className="whitespace-nowrap px-8 py-3 bg-white dark:bg-zinc-900 text-zinc-800 dark:text-white font-semibold rounded-lg border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-all text-center cursor-pointer z-20"
                             >
                                 {t.hero.viewProjects}
                             </Link>
@@ -124,27 +144,6 @@ export default function Hero() {
                                     priority
                                 />
                             </div>
-                        </div>
-
-                        {/* antiGravity component */}
-                        <div className="absolute top-0 left-0 right-0 z-100">
-                            <Antigravity
-                                count={500}
-                                magnetRadius={1}
-                                ringRadius={9}
-                                waveSpeed={1}
-                                waveAmplitude={10}
-                                particleSize={1.5}
-                                lerpSpeed={0.05}
-                                color="#29c390"
-                                autoAnimate
-                                particleVariance={0.6}
-                                rotationSpeed={0}
-                                depthFactor={1}
-                                pulseSpeed={10}
-                                particleShape="sphere"
-                                fieldStrength={10}
-                            />
                         </div>
                     </div>
                 </div>
