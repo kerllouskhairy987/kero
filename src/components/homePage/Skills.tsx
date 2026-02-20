@@ -30,6 +30,7 @@ export default function Skills() {
         { name: "React", icon: "https://cdn.simpleicons.org/react/61DAFB" },
         { name: "Next.js", icon: "https://cdn.simpleicons.org/nextdotjs/000000?darkmode=white" },
         { name: "TypeScript", icon: "https://cdn.simpleicons.org/typescript/3178C6" },
+        { name: "Redux Toolkit", icon: "https://cdn.simpleicons.org/redux/764ABC" },
     ];
 
     const stylingSkills: Skill[] = [
